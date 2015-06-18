@@ -14,6 +14,7 @@
 		F4A54E931B32855700D467F5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F4A54E921B32855700D467F5 /* Images.xcassets */; };
 		F4A54E961B32855700D467F5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4A54E941B32855700D467F5 /* LaunchScreen.xib */; };
 		F4A54EA21B32855700D467F5 /* recordTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A54EA11B32855700D467F5 /* recordTests.m */; };
+		F4A54EAC1B32867000D467F5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A54EAB1B32867000D467F5 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		F4A54E9B1B32855700D467F5 /* recordTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = recordTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4A54EA01B32855700D467F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4A54EA11B32855700D467F5 /* recordTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = recordTests.m; sourceTree = "<group>"; };
+		F4A54EAB1B32867000D467F5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4A54EAC1B32867000D467F5 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +66,7 @@
 		F4A54E791B32855700D467F5 = {
 			isa = PBXGroup;
 			children = (
+				F4A54EAB1B32867000D467F5 /* AVFoundation.framework */,
 				F4A54E841B32855700D467F5 /* record */,
 				F4A54E9E1B32855700D467F5 /* recordTests */,
 				F4A54E831B32855700D467F5 /* Products */,
