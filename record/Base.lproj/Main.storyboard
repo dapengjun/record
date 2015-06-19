@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="sIW-TY-WD3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--录音-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
@@ -46,18 +46,140 @@
                                     <action selector="onPlayClick:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="cUq-xV-Liv"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s21-p8-hPl">
+                                <rect key="frame" x="250" y="160" width="100" height="40"/>
+                                <color key="backgroundColor" red="0.098039215690000001" green="0.50980392159999999" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="W4g-4t-GpQ"/>
+                                    <constraint firstAttribute="width" constant="100" id="gJ9-c0-haX"/>
+                                </constraints>
+                                <state key="normal" title="draw">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onDrawClick:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="y2N-Vo-NrB"/>
+                                    <action selector="onPlayClick:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="kzM-7t-SlL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="s21-p8-hPl" firstAttribute="leading" secondItem="3ak-tp-y2J" secondAttribute="leading" id="0ze-fa-h83"/>
                             <constraint firstAttribute="centerX" secondItem="oHs-L0-AmR" secondAttribute="centerX" id="Dhr-NR-Pxu"/>
+                            <constraint firstItem="s21-p8-hPl" firstAttribute="top" secondItem="3ak-tp-y2J" secondAttribute="bottom" constant="50" id="HZl-hw-hia"/>
                             <constraint firstItem="oHs-L0-AmR" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="50" id="UJL-iW-Y15"/>
                             <constraint firstItem="3ak-tp-y2J" firstAttribute="leading" secondItem="oHs-L0-AmR" secondAttribute="leading" id="c49-1b-6ty"/>
                             <constraint firstItem="3ak-tp-y2J" firstAttribute="top" secondItem="oHs-L0-AmR" secondAttribute="bottom" constant="50" id="ogh-dm-k20"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="s21-p8-hPl"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="0ze-fa-h83"/>
+                                <exclude reference="HZl-hw-hia"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="s21-p8-hPl"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="0ze-fa-h83"/>
+                                <include reference="HZl-hw-hia"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="录音" id="NRc-qA-w3u">
+                        <barButtonItem key="backBarButtonItem" title="back" id="jDT-kK-Azc"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1222.5" y="315"/>
+        </scene>
+        <!--Pcm View Controller-->
+        <scene sceneID="6vE-kt-g02">
+            <objects>
+                <viewController storyboardIdentifier="pcmViewController" id="WRD-79-A5f" customClass="PcmViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5hL-4o-EvY"/>
+                        <viewControllerLayoutGuide type="bottom" id="nJi-ee-w2g"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DuE-4k-6bw">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pwa-PA-3B1" customClass="MyView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="lAg-bg-lUx"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="lAg-bg-lUx"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="lAg-bg-lUx"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="pwa-PA-3B1" secondAttribute="trailing" id="FLV-ie-XCk"/>
+                            <constraint firstItem="pwa-PA-3B1" firstAttribute="leading" secondItem="DuE-4k-6bw" secondAttribute="leading" id="pU8-AG-w5h"/>
+                            <constraint firstItem="pwa-PA-3B1" firstAttribute="top" secondItem="5hL-4o-EvY" secondAttribute="bottom" id="xIq-kl-3xa"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="pwa-PA-3B1"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="FLV-ie-XCk"/>
+                                <exclude reference="pU8-AG-w5h"/>
+                                <exclude reference="xIq-kl-3xa"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="pwa-PA-3B1"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="FLV-ie-XCk"/>
+                                <include reference="pU8-AG-w5h"/>
+                                <include reference="xIq-kl-3xa"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="myView" destination="pwa-PA-3B1" id="hx9-nm-oH1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C7v-ev-mlA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2002.5" y="318"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rHT-a7-NUq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sIW-TY-WD3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zs2-ku-EyK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="PdW-qE-Ud5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="S6a-2V-yas" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="216" y="976"/>
         </scene>
     </scenes>
 </document>

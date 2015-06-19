@@ -15,6 +15,9 @@
 		F4A54E961B32855700D467F5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F4A54E941B32855700D467F5 /* LaunchScreen.xib */; };
 		F4A54EA21B32855700D467F5 /* recordTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A54EA11B32855700D467F5 /* recordTests.m */; };
 		F4A54EAC1B32867000D467F5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4A54EAB1B32867000D467F5 /* AVFoundation.framework */; };
+		F4EE46E31B32BE4100A5E11F /* PcmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4EE46E21B32BE4100A5E11F /* PcmViewController.m */; };
+		F4EE46E61B32C2C300A5E11F /* MyView.m in Sources */ = {isa = PBXBuildFile; fileRef = F4EE46E51B32C2C300A5E11F /* MyView.m */; };
+		F4EE46EC1B32E76F00A5E11F /* RDValue.m in Sources */ = {isa = PBXBuildFile; fileRef = F4EE46EB1B32E76F00A5E11F /* RDValue.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +45,12 @@
 		F4A54EA01B32855700D467F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F4A54EA11B32855700D467F5 /* recordTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = recordTests.m; sourceTree = "<group>"; };
 		F4A54EAB1B32867000D467F5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		F4EE46E11B32BE4100A5E11F /* PcmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PcmViewController.h; sourceTree = "<group>"; };
+		F4EE46E21B32BE4100A5E11F /* PcmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PcmViewController.m; sourceTree = "<group>"; };
+		F4EE46E41B32C2C300A5E11F /* MyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyView.h; sourceTree = "<group>"; };
+		F4EE46E51B32C2C300A5E11F /* MyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyView.m; sourceTree = "<group>"; };
+		F4EE46EA1B32E76F00A5E11F /* RDValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDValue.h; sourceTree = "<group>"; };
+		F4EE46EB1B32E76F00A5E11F /* RDValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDValue.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +94,7 @@
 		F4A54E841B32855700D467F5 /* record */ = {
 			isa = PBXGroup;
 			children = (
+				F4EE46E01B32BE1900A5E11F /* drawPCM */,
 				F4A54E891B32855700D467F5 /* AppDelegate.h */,
 				F4A54E8A1B32855700D467F5 /* AppDelegate.m */,
 				F4A54E8C1B32855700D467F5 /* ViewController.h */,
@@ -121,6 +131,19 @@
 				F4A54EA01B32855700D467F5 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F4EE46E01B32BE1900A5E11F /* drawPCM */ = {
+			isa = PBXGroup;
+			children = (
+				F4EE46E11B32BE4100A5E11F /* PcmViewController.h */,
+				F4EE46E21B32BE4100A5E11F /* PcmViewController.m */,
+				F4EE46E41B32C2C300A5E11F /* MyView.h */,
+				F4EE46E51B32C2C300A5E11F /* MyView.m */,
+				F4EE46EA1B32E76F00A5E11F /* RDValue.h */,
+				F4EE46EB1B32E76F00A5E11F /* RDValue.m */,
+			);
+			path = drawPCM;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,8 +247,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4A54E8E1B32855700D467F5 /* ViewController.m in Sources */,
+				F4EE46E31B32BE4100A5E11F /* PcmViewController.m in Sources */,
 				F4A54E8B1B32855700D467F5 /* AppDelegate.m in Sources */,
+				F4EE46EC1B32E76F00A5E11F /* RDValue.m in Sources */,
 				F4A54E881B32855700D467F5 /* main.m in Sources */,
+				F4EE46E61B32C2C300A5E11F /* MyView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +446,7 @@
 				F4A54EA71B32855700D467F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F4A54EA81B32855700D467F5 /* Build configuration list for PBXNativeTarget "recordTests" */ = {
 			isa = XCConfigurationList;
@@ -428,6 +455,7 @@
 				F4A54EAA1B32855700D467F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

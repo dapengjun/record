@@ -16,6 +16,7 @@
 
 - (IBAction)onRecordClick:(id)sender;
 - (IBAction)onPlayClick:(id)sender;
+- (IBAction)onDrawClick:(id)sender;
 
 @end
 

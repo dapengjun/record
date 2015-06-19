@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "PcmViewController.h"
 
 #define RECORD_FILE @"record.pcm"
 
@@ -93,6 +94,13 @@
     }else {
         [self.audioPlayer stop];
     }
+}
+
+- (IBAction)onDrawClick:(id)sender {
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    PcmViewController *vc = [mainStoryboard instantiateViewControllerWithIdentifier:@"pcmViewController"];
+    vc.path = self.audioRecorder.url.path;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 #pragma mark audio delegate
 -(void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag
